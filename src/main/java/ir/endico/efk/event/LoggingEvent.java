@@ -3,9 +3,7 @@ package ir.endico.efk.event;
 import lombok.Builder;
 import lombok.Getter;
 
-import java.time.Duration;
 import java.time.Instant;
-import java.util.Date;
 import java.util.Map;
 
 @Getter
@@ -15,7 +13,7 @@ public class LoggingEvent {
     private final String eventId;
 
     @Builder.Default
-    private final Date timestamp = new Date();
+    private final Instant timestamp = Instant.now();
 
     private final LogEventType eventType;
 
@@ -41,7 +39,8 @@ public class LoggingEvent {
 
     private final LogStatus status;
 
-    private final Duration duration;
+    private final Long duration;
 
     private final Map<String, Object> metadata;
+
 }

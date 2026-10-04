@@ -3,13 +3,16 @@ package ir.endico.efk.configuration;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @Getter
 @Setter
-@ConditionalOnProperty(prefix = "efk")
+@ConditionalOnProperty(
+        prefix = "efk",
+        name = "enabled",
+        havingValue = "true",
+        matchIfMissing = true
+)
 public class EfkPropertiesConfiguration {
-
 
     private boolean enabled = true;
 
@@ -26,6 +29,7 @@ public class EfkPropertiesConfiguration {
         private int connectionTimeout = 3000;
 
         private int socketTimeout = 30000;
+
     }
 
 }

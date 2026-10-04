@@ -1,9 +1,9 @@
-package ir.endico.efk.transport.elasticsearch;
+package ir.endico.efk.publisher.elasticsearch;
 
 import ir.endico.efk.event.LoggingEvent;
-import ir.endico.efk.transport.LoggingTransport;
+import ir.endico.efk.publisher.LoggingPublisher;
 
-public class ElasticsearchLoggingTransport implements LoggingTransport {
+public class ElasticsearchLoggingPublisher implements LoggingPublisher {
 
     @Override
     public void send(LoggingEvent event) {

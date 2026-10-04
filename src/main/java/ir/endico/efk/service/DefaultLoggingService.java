@@ -1,21 +1,21 @@
 package ir.endico.efk.service;
 
 import ir.endico.efk.event.LoggingEvent;
-import ir.endico.efk.transport.LoggingTransport;
+import ir.endico.efk.publisher.LoggingPublisher;
 import org.springframework.stereotype.Service;
 
 @Service
 public class DefaultLoggingService implements LoggingService {
 
-    private final LoggingTransport loggingTransport;
+    private final LoggingPublisher loggingPublisher;
 
-    public DefaultLoggingService(LoggingTransport loggingTransport) {
-        this.loggingTransport = loggingTransport;
+    public DefaultLoggingService(LoggingPublisher loggingPublisher) {
+        this.loggingPublisher = loggingPublisher;
     }
 
     @Override
     public void log(LoggingEvent event) {
-        loggingTransport.send(event);
+        loggingPublisher.send(event);
     }
 
 }

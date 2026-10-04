@@ -13,7 +13,7 @@ FROM eclipse-temurin:21-jre
 WORKDIR /app
 
 RUN useradd --system --uid 1001 springuser
-COPY --from=build /app/target/spring-boot-efk-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /app/target/*.jar app.jar
 
 USER 1001
 EXPOSE 8080
