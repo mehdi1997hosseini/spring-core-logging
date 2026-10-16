@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>ir.mazvia</groupId>
-    <artifactId>sprin-core-logging</artifactId>
+    <artifactId>spring-core-logging</artifactId>
     <version>1.0.1-SNAPSHOT</version>
 
     <name>core Logging</name>
